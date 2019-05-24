@@ -31,6 +31,7 @@ make && make install
 ./configure --prefix=${HOME}/local --enable-ext-colors --enable-sp-funcs --enable-term-driver
 ```
 After adding the configuration and `export TERM="xterm-256color"` at the first line of `.zsh` file, the tput error disappers.
+
 2. For Tmux, some compile options are needed.
 ```
 ./configure --prefix=${HOME}/local CFLAGS="-I${HOME}/local/include" LDFLAGS="-L${HOME}/local/lib"

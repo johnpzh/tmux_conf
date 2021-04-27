@@ -44,3 +44,54 @@ After adding the configuration and `export TERM="xterm-256color"` at the first l
 ```
 export LD_LIBRARY_PATH="${HOME}/local/lib:${LD_LIBRARY_PATH}"
 ```
+
+### Common command
+```
+# change to the app's directory
+cd app/
+mkdir build
+cd build
+
+```
+### ncurses
+```
+../configure --prefix=${HOME}/local \
+	CXXFLAGS="-I$HOME/local/include -I$HOME/local/include/ncurses" \
+	CFLAGS="-I$HOME/local/include -I$HOME/local/include/ncurses" \
+	LDFLAGS="-L$HOME/local/lib"
+
+make clean 
+make -j && make install
+```
+
+### libevent
+```
+../configure --prefix=${HOME}/local
+make clean -j
+make -j && make install
+```
+
+### Zsh
+```
+LOCAL_PATH="/home/zhenpeng/local"
+#export PATH=$LOCAL_PATH/bin/:$PATH
+export LD_LIBRARY_PATH=$LOCAL_PATH/lib:$LD_LIBRARY_PATH
+export CFLAGS="-I$LOCAL_PATH/include -fPIC"
+export CXXFLAGS="-I$LOCAL_PATH/include -fPIC"
+export LDFLAGS="-L${LOCAL_PATH}/lib"
+
+../configure --prefix=${LOCAL_PATH} --enable-shared
+make clean -j
+make -j && make install
+```
+
+### tmux
+```
+../configure --prefix=${HOME}/local \
+	CXXFLAGS="-I$HOME/local/include -I$HOME/local/include/ncurses" \
+	CFLAGS="-I$HOME/local/include -I$HOME/local/include/ncurses" \
+	LDFLAGS="-L$HOME/local/lib"
+
+make clean 
+make -j && make install
+```

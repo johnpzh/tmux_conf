@@ -37,5 +37,10 @@ After adding the configuration and `export TERM="xterm-256color"` at the first l
 
 2. For Tmux, some compile options are needed.
 ```
-./configure --prefix=${HOME}/local CFLAGS="-I${HOME}/local/include" LDFLAGS="-L${HOME}/local/lib"
+./configure --prefix=${HOME}/local CFLAGS="-I${HOME}/local/include -I${HOME}/local/include/ncurses" LDFLAGS="-L${HOME}/local/lib"
+```
+
+3. Update the `LD_LIBRARY_PATH`.
+```
+export LD_LIBRARY_PATH="${HOME}/local/lib:${LD_LIBRARY_PATH}"
 ```

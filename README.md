@@ -26,13 +26,13 @@ make && make install
 
 ## Some Notes
 
-1. For Ncurses 6.1, some extra configure flags are needed to support xterm-256color. Otherwise I got `tput: unknown terminal 'xxx'` error when I used zsh as the shell. I'm not sure which one is exactly for the xterm-256color.
+1. For Ncurses 6.1, some extra configure flags are needed to support screen-256color. Otherwise I got `tput: unknown terminal 'xxx'` error when I used zsh as the shell. I'm not sure which one is exactly for the screen-256color.
 ```
 export CXXFLAGS="-fPIC"
 export CFLAGS="-fPIC"
 ./configure --prefix=${HOME}/local --enable-ext-colors --enable-sp-funcs --enable-term-driver --enable-shared
 ```
-After adding the configuration and `export TERM="xterm-256color"` at the first line of `.zsh` file, the tput error disappers.
+After adding the configuration and `export TERM="screen-256color"` at the first line of `.zsh` file, the tput error disappers.
 `--enable-shared` and those two `export` is for `zsh` installation.
 
 2. For Tmux, some compile options are needed.

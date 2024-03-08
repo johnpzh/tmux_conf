@@ -8,6 +8,8 @@ Refer to
 2. [http://jhshi.me/2016/07/08/installing-tmux-from-source-non-root/index.html#.XOhad1SJLcQ](http://jhshi.me/2016/07/08/installing-tmux-from-source-non-root/index.html#.XOhad1SJLcQ)
 3. [https://gist.github.com/ryin/3106801](https://gist.github.com/ryin/3106801)
 
+# (Updated) Please use this gist
+
 ## Tmux
 [Tmux](https://github.com/tmux/tmux)
 ## Dependent Libraries
@@ -23,6 +25,9 @@ cd xxx
 ./configure --prefix=${HOME}/local
 make && make install
 ```
+
+### (Updated) Please use the commands in this [gist](https://gist.github.com/johnpzh/85c1870aeafe1ee161a47574af9cae22)
+
 
 ## Some Notes
 

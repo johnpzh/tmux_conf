@@ -1,0 +1,20 @@
+# Set the $TERM
+term screen-256color
+
+# Allow programs in windows to set the clipboard
+termcapinfo xterm*|rxvt*|alacritty*|foot*|kitty*|wezterm* 'Ms=\E]52;%p1%s;%p2%s\007'
+
+# Press Ctrl + a followed by the respective arrow key to switch focus.
+bind -k kl focus left
+bind -k kr focus right
+bind -k ku focus up
+bind -k kd focus down
+
+# Use mouse scroll wheel for terminal history
+termcapinfo xterm* ti@:te@
+
+# Force the status line to always stay at the bottom
+hardstatus alwayslastline
+
+# Define the content: window list with the current window highlighted
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{= kG}(%n*%f%t%?(%u)%?)%{= kw}%?%+Lw%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
